@@ -13,7 +13,7 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
 
     ListView search_bar;
     ArrayAdapter<String> adapter;
@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_search);
+        setTitle("Event Finder");
 
         search_bar = findViewById(R.id.search_bar);
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         eventArray.addAll(Arrays.asList(getResources().getStringArray(R.array.my_events)));
 
         adapter = new ArrayAdapter<String>(
-                MainActivity.this,
+                SearchActivity.this,
                 android.R.layout.simple_list_item_1,
                 eventArray
         );
