@@ -14,25 +14,52 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Main Page");
 
+
+        configurePromotedButton();
+        configureEventFinderButton();
+        configureCalendarButton();
+
+    }
+
+    private void configurePromotedButton(){
         //Create a reference to the promoted button
-        Button PromotedButton = (Button) findViewById((R.id.PromotedButton));
+        Button promotedButton = (Button) findViewById((R.id.PromotedButton));
         //set event listener for the button
-        PromotedButton.setOnClickListener(
-                //set interface
-                new Button.OnClickListener(){
+        promotedButton.setOnClickListener(new Button.OnClickListener(){
                     @Override
                     public void onClick(View v){
-                        openPromotedEventsPage();
+                        //this opens the promoted events page when the button is clicked.
+                        Intent intent = new Intent(MainActivity.this,PromotedEventsPage.class);
+                        startActivity(intent);
                     }
                 }
         );
     }
 
-    //This method opens the promoted events page when the button is clicked.
-    private void openPromotedEventsPage() {
-        Intent intent = new Intent(this,PromotedEventsPage.class);
-        startActivity(intent);
-
+    private void configureEventFinderButton(){
+        Button eventFinderButton = (Button) findViewById((R.id.EventFinderButton));
+        eventFinderButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,EventFinderPage.class);
+                startActivity(intent);
+            }
+        });
     }
+
+    private void configureCalendarButton(){
+        Button calendarButton = (Button) findViewById((R.id.CalendarButton));
+        calendarButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO: complete this function after the calendar page is created.
+                //Intent intent = new Intent(MainActivity.this,CalendarPage.class);
+                //startActivity(intent);
+            }
+        });
+    }
+
+
 }
