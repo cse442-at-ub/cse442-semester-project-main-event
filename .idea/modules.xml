@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Event Finder.iml" filepath="$PROJECT_DIR$/Event Finder.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cse442-semester-project-main-event.iml" filepath="$PROJECT_DIR$/cse442-semester-project-main-event.iml" group="cse442-semester-project-main-event" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" group="cse442-semester-project-main-event/library" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" group="cse442-semester-project-main-event/sample" />
     </modules>
   </component>
 </project>
