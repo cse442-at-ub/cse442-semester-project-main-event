@@ -43,22 +43,22 @@ public class Event_Registration_Form extends View {
     private void init(AttributeSet attrs, int defStyle) {
         // Load attributes
         final TypedArray a = getContext().obtainStyledAttributes(
-                attrs, R.styleable.Event_Registration_Form, defStyle, 0);
+                attrs, com.framgia.library.calendardayview.R.styleable.Event_Registration_Form, defStyle, 0);
 
         mExampleString = a.getString(
-                R.styleable.Event_Registration_Form_exampleString);
+                com.framgia.library.calendardayview.R.styleable.Event_Registration_Form_exampleString);
         mExampleColor = a.getColor(
-                R.styleable.Event_Registration_Form_exampleColor,
+                com.framgia.library.calendardayview.R.styleable.Event_Registration_Form_exampleColor,
                 mExampleColor);
         // Use getDimensionPixelSize or getDimensionPixelOffset when dealing with
         // values that should fall on pixel boundaries.
         mExampleDimension = a.getDimension(
-                R.styleable.Event_Registration_Form_exampleDimension,
+                com.framgia.library.calendardayview.R.styleable.Event_Registration_Form_exampleDimension,
                 mExampleDimension);
 
-        if (a.hasValue(R.styleable.Event_Registration_Form_exampleDrawable)) {
+        if (a.hasValue(com.framgia.library.calendardayview.R.styleable.Event_Registration_Form_exampleDrawable)) {
             mExampleDrawable = a.getDrawable(
-                    R.styleable.Event_Registration_Form_exampleDrawable);
+                    com.framgia.library.calendardayview.R.styleable.Event_Registration_Form_exampleDrawable);
             mExampleDrawable.setCallback(this);
         }
 

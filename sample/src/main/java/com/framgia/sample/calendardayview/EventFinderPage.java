@@ -1,13 +1,17 @@
 package com.framgia.sample.calendardayview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,6 +28,8 @@ public class EventFinderPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_finder_page);
         setTitle("Event Finder");
+
+        configureRegisterEventButton();
 
         //bind eventList to the ListView on the activity_event_finder_page
         eventList = (ListView) findViewById(R.id.event_list);
@@ -68,5 +74,16 @@ public class EventFinderPage extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
 
+    }
+
+    private void configureRegisterEventButton(){
+        Button registerEventButton = (Button) findViewById(R.id.register_Event_Button);
+        registerEventButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EventFinderPage.this, Event_Registration_Form.class);
+                startActivity(intent);
+            }
+        });
     }
 }
