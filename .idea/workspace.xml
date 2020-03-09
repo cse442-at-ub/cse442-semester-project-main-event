@@ -7,14 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3e088a1-2d37-419d-b381-b6abb6e4634b" name="Default Changelist" comment="testing">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/library/library.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/sample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/sample.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/EventFinderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/EventFinderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/Event_Registration_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/Event_Registration_Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_event_finder_page.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_event_finder_page.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/sample_event__registration__form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/sample_event__registration__form.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
