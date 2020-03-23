@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventFinderPage">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="79dp"
+        android:layout_height="741dp"
+        android:background="#03DDEC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/PromotedButton"
+        android:layout_width="85dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/PromotedButton"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <Button
+        android:id="@+id/EventFinderButton"
+        android:layout_width="89dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="28dp"
+        android:text="Event Finder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PromotedButton" />
+
+    <Button
+        android:id="@+id/CalendarButton"
+        android:layout_width="85dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="24dp"
+        android:text="Calendar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EventFinderButton" />
+
+    <ListView
+        android:id="@+id/event_list"
+        android:layout_width="357dp"
+        android:layout_height="737dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PromotedButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    tools:context=".EventFinderPage">-->
+
+    <!--    <ListView-->
+    <!--        android:id="@+id/search_bar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:padding="10dp" />-->
+
+
+    <!--</LinearLayout>-->
