@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="eventColor">#553fa9eb</color>
+    <color name="eventColorSelected">#aab2c99a</color>
+    <dimen name="cdv_extra_dimen">3dp</dimen>
+    <dimen name="dayHeight">64dp</dimen>
+    <dimen name="event_header_padding_bottom">8dp</dimen>
+    <dimen name="popup_quote_height">40dp</dimen>
+    <dimen name="popup_quote_margin_top">-30dp</dimen>
+    <dimen name="popup_quote_width">150dp</dimen>
+    <string name="app_name">library</string>
+    <declare-styleable name="CalendarDayView">
+        <attr format="dimension" name="dayHeight"/>
+        <attr format="boolean" name="debug"/>
+        <attr format="dimension" name="eventMarginLeft"/>
+        <attr format="color" name="lineColor"/>
+        <attr format="dimension" name="textHourSize"/>
+        <attr format="integer" name="startHour"/>
+        <attr format="integer" name="endHour"/>
+    </declare-styleable>
+</resources>

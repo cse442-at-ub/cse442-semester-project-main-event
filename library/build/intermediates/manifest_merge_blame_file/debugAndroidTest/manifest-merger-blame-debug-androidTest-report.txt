@@ -1,0 +1,47 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.framgia.library.calendardayview.test" >
+4
+5    <uses-sdk
+5-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:5:5-74
+6        android:minSdkVersion="15"
+6-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:5:15-41
+7        android:targetSdkVersion="25" />
+7-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:5:42-71
+8
+9    <instrumentation
+9-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:11:5-15:90
+10        android:name="android.test.InstrumentationTestRunner"
+10-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:11:22-75
+11        android:functionalTest="false"
+11-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:14:22-52
+12        android:handleProfiling="false"
+12-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:13:22-53
+13        android:label="Tests for com.framgia.library.calendardayview.test"
+13-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:15:22-88
+14        android:targetPackage="com.framgia.library.calendardayview.test" />
+14-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:12:22-86
+15
+16    <meta-data
+16-->[com.android.support:appcompat-v7:25.3.1] /Users/zeroxmile/.gradle/caches/transforms-2/files-2.1/7f42863b899f72119d51c5a361ad9ca4/appcompat-v7-25.3.1/AndroidManifest.xml:25:5-27:34
+17        android:name="android.support.VERSION"
+17-->[com.android.support:appcompat-v7:25.3.1] /Users/zeroxmile/.gradle/caches/transforms-2/files-2.1/7f42863b899f72119d51c5a361ad9ca4/appcompat-v7-25.3.1/AndroidManifest.xml:26:9-47
+18        android:value="25.3.1" />
+18-->[com.android.support:appcompat-v7:25.3.1] /Users/zeroxmile/.gradle/caches/transforms-2/files-2.1/7f42863b899f72119d51c5a361ad9ca4/appcompat-v7-25.3.1/AndroidManifest.xml:27:9-31
+19
+20    <application
+20-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:7:5-9:19
+21        android:allowBackup="true"
+21-->[__tested_artifact__::library] /Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-35
+22        android:debuggable="true"
+22-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:7:18-43
+23        android:label="@string/app_name"
+23-->[__tested_artifact__::library] /Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-41
+24        android:supportsRtl="true" >
+24-->[__tested_artifact__::library] /Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:9-35
+25        <uses-library android:name="android.test.runner" />
+25-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:8:9-60
+25-->/Users/zeroxmile/AndroidStudioProjects/cse442-semester-project-main-event/library/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8114393054901380936.xml:8:23-57
+26    </application>
+27
+28</manifest>
