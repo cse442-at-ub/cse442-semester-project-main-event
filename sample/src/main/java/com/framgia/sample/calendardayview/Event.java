@@ -17,13 +17,15 @@ public class Event implements IEvent {
     private String mName;
     private String mLocation;
     private int mColor;
+    private int RSVP;
+    private boolean full;
 
     public Event() {
 
     }
 
     public Event(long mId, Calendar mStartTime, Calendar mEndTime, String mName, String mLocation,
-            int mColor) {
+                 int mColor) {
         this.mId = mId;
         this.mStartTime = mStartTime;
         this.mEndTime = mEndTime;
@@ -78,5 +80,29 @@ public class Event implements IEvent {
 
     public void setColor(int color) {
         this.mColor = color;
+    }
+
+    public int getRSVP() {
+        return RSVP;
+    }
+
+    public void setRSVP(int RSVP) {
+        this.RSVP = RSVP;
+    }
+
+    public boolean isFull() {
+        return full;
+    }
+
+    public void setFull(boolean full) {
+        this.full = full;
+    }
+
+    public boolean Barrier(){
+        if (isFull()){
+            return true;
+        }
+        else
+            return false;
     }
 }
