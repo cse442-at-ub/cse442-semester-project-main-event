@@ -43,7 +43,19 @@ public class MainActivity extends AppCompatActivity {
         configurePromotedButton();
         configureEventFinderButton();
         configureCalendarButton();
+        configureEventRegistrationButton();
 
+    }
+
+    private void configureEventRegistrationButton() {
+        Button Register_Event = (Button) findViewById((R.id.register_event_button));
+        Register_Event.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Event_Registration_Form.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void configurePromotedButton(){
