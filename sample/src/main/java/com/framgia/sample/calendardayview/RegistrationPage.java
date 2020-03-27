@@ -7,9 +7,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 public class RegistrationPage extends AppCompatActivity {
     private static final String FILE_NAME = "account_credentials.txt";
@@ -35,10 +37,15 @@ public class RegistrationPage extends AppCompatActivity {
         String text_to_write = username + "\n" + password + "\n" + email_address;
 
         FileOutputStream fos = null;
+        BufferedWriter bw = null;
 
         try {
-            fos = openFileOutput(file, MODE_PRIVATE);
-            fos.write(text_to_write.getBytes());
+            fos = openFileOutput(file, MODE_PRIVATE | MODE_APPEND);
+            bw = new BufferedWriter(new OutputStreamWriter(fos));
+
+            bw.write(text_to_write);
+            bw.newLine();
+
 
             user.getText().clear();
             pass.getText().clear();
@@ -51,7 +58,9 @@ public class RegistrationPage extends AppCompatActivity {
         } finally {
             if(fos != null){
                 try {
+                    bw.close();
                     fos.close();
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
