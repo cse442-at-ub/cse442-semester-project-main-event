@@ -2,22 +2,10 @@ package com.framgia.sample.calendardayview;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
-import android.widget.ImageView;
-import com.framgia.library.calendardayview.CalendarDayView;
-import com.framgia.library.calendardayview.EventView;
-import com.framgia.library.calendardayview.PopupView;
-import com.framgia.library.calendardayview.data.IEvent;
-import com.framgia.library.calendardayview.data.IPopup;
-import com.framgia.library.calendardayview.decoration.CdvDecorationDefault;
-import java.util.ArrayList;
-import java.util.Calendar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
 import android.widget.*;
 
 
@@ -43,7 +31,20 @@ public class MainActivity extends AppCompatActivity {
         configurePromotedButton();
         configureEventFinderButton();
         configureCalendarButton();
+        configureEventRegistrationButton();
+        configureRegisterPageButton();
 
+    }
+
+    private void configureEventRegistrationButton() {
+        Button Register_Event = (Button) findViewById((R.id.register_event_button));
+        Register_Event.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Event_Registration_Form.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void configurePromotedButton(){
@@ -79,6 +80,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //TODO: complete this function after the calendar page is created.
                 Intent intent = new Intent(MainActivity.this,Calender.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void configureRegisterPageButton(){
+        Button registerPageButton = (Button) findViewById(R.id.RegisterPageButton);
+        registerPageButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,RegistrationPage.class);
                 startActivity(intent);
             }
         });

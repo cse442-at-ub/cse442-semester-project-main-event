@@ -3,12 +3,11 @@ package com.framgia.sample.calendardayview;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class PromotedEventsPage extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_promoted_events_page);
-        setTitle("Promoted Page");
+        setContentView(R.layout.activity_profile_page);
     }
 }

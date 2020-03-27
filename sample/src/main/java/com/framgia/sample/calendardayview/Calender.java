@@ -1,13 +1,14 @@
 package com.framgia.sample.calendardayview;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
+
 import com.framgia.library.calendardayview.CalendarDayView;
 import com.framgia.library.calendardayview.EventView;
 import com.framgia.library.calendardayview.PopupView;
@@ -30,10 +31,13 @@ import android.widget.Toast;
 public class Calender extends AppCompatActivity {
 
 
-    CalendarDayView dayView;
+    public static CalendarDayView dayView;
 
-    ArrayList<IEvent> events;
-    ArrayList<IPopup> popups;
+    public static ArrayList<IEvent> myclasses = new ArrayList<>();
+    public static ArrayList<IPopup> myevents  = new ArrayList<>();
+
+
+    public static int event_ID = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +59,13 @@ public class Calender extends AppCompatActivity {
                         Log.e("TAG", "onEventViewClick:" + data.getName());
                         if (data instanceof Event) {
                             // change event (ex: set event color)
-                            dayView.setEvents(events);
+                            dayView.setEvents(myclasses);
+
                         }
                     }
                 });
 
-        ((CdvDecorationDefault) (dayView.getDecoration())).setOnPopupClickListener(
+        /*((CdvDecorationDefault) (dayView.getDecoration())).setOnPopupClickListener(
                 new PopupView.OnEventPopupClickListener() {
                     @Override
                     public void onPopupClick(PopupView view, IPopup data) {
@@ -72,44 +77,28 @@ public class Calender extends AppCompatActivity {
                         Log.e("TAG", "onQuoteClick:" + data.getTitle());
                     }
 
-                    @Override
-                    public void onLoadData(PopupView view, ImageView start, ImageView end,
-                                           IPopup data) {
-                        start.setImageResource(R.drawable.avatar);
-                    }
-                });
+                });*/
 
-        events = new ArrayList<>();
 
-       /* {
-            int eventColor = ContextCompat.getColor(this, R.color.eventColor);
-            Calendar timeStart = Calendar.getInstance();
-            timeStart.set(Calendar.HOUR_OF_DAY, 11);
-            timeStart.set(Calendar.MINUTE, 0);
-            Calendar timeEnd = (Calendar) timeStart.clone();
-            timeEnd.set(Calendar.HOUR_OF_DAY, 15);
-            timeEnd.set(Calendar.MINUTE, 30);
-            Event event = new Event(1, timeStart, timeEnd, "Event", "Hockaido", eventColor);
 
-            events.add(event);
-        }*/
+
+
+        /*String className = getIntent().getStringExtra("className");
+        int startHour = getIntent().getIntExtra("startHour", 0);
+        int startMin = getIntent().getIntExtra("startMin", 0);
+        int endHour = getIntent().getIntExtra("endHour", 0);
+        int endMin = getIntent().getIntExtra("endMin", 0);
+        String location = getIntent().getStringExtra("Location");
+
+        myclasses.add(setClasses(className, startHour, startMin, endHour, endMin, location));
+
+
+        //Log.v("classes: ", String.valueOf(myclasses.size()));*/
+
+
 
         {
-            int eventColor = ContextCompat.getColor(this, R.color.eventColor1);
-            Calendar timeStart = Calendar.getInstance();
-            timeStart.set(Calendar.HOUR_OF_DAY, 10);
-            timeStart.set(Calendar.MINUTE, 0);
-            Calendar timeEnd = (Calendar) timeStart.clone();
-            timeEnd.set(Calendar.HOUR_OF_DAY, 11);
-            timeEnd.set(Calendar.MINUTE, 30);
-            Event event = new Event(1, timeStart, timeEnd, "CSE442", "Knox 202", eventColor);
 
-            events.add(event);
-        }
-
-        /*popups = new ArrayList<>();
-
-        {
             Calendar timeStart = Calendar.getInstance();
             timeStart.set(Calendar.HOUR_OF_DAY, 12);
             timeStart.set(Calendar.MINUTE, 0);
@@ -120,32 +109,109 @@ public class Calender extends AppCompatActivity {
             Popup popup = new Popup();
             popup.setStartTime(timeStart);
             popup.setEndTime(timeEnd);
-            popup.setImageStart("http://sample.com/image.png");
-            popup.setTitle("event 1 with title");
-            popup.setDescription("Yuong alsdf");
-            popups.add(popup);
+            popup.setTitle("Hack Night");
+            popup.setDescription("Hacking with peoples");
+            myevents.add(popup);
         }
 
         {
+
             Calendar timeStart = Calendar.getInstance();
-            timeStart.set(Calendar.HOUR_OF_DAY, 20);
+            timeStart.set(Calendar.HOUR_OF_DAY, 14);
             timeStart.set(Calendar.MINUTE, 0);
             Calendar timeEnd = (Calendar) timeStart.clone();
-            timeEnd.set(Calendar.HOUR_OF_DAY, 22);
-            timeEnd.set(Calendar.MINUTE, 0);
+            timeEnd.set(Calendar.HOUR_OF_DAY, 15);
+            timeEnd.set(Calendar.MINUTE, 00);
 
             Popup popup = new Popup();
             popup.setStartTime(timeStart);
             popup.setEndTime(timeEnd);
-            popup.setImageStart("http://sample.com/image.png");
-            popup.setTitle("event 2 with title");
-            popup.setDescription("Yuong alsdf");
-            popups.add(popup);
-        }*/
+            popup.setTitle("Math club");
+            popup.setDescription("Solve math");
+            myevents.add(popup);
+        }
 
-        dayView.setEvents(events);
-        //dayView.setPopups(popups);
+
+        dayView.setPopups(myevents);
+        //dayView.setEvents(myclasses);
+
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
     }
+
+
+    /**
+     *
+     * @param className
+     * @param startHour
+     * @param startMin
+     * @param endHour
+     * @param endMin
+     * @param location
+     */
+    public static void setClasses(Context context, String className, int startHour, int startMin, int endHour, int endMin, String location, int classColor) {
+
+
+        Calendar timeStart = Calendar.getInstance();
+        timeStart.set(Calendar.HOUR_OF_DAY, startHour);
+        timeStart.set(Calendar.MINUTE, startMin);
+        Calendar timeEnd = (Calendar) timeStart.clone();
+        timeEnd.set(Calendar.HOUR_OF_DAY, endHour);
+        timeEnd.set(Calendar.MINUTE, endMin);
+        Event event = new Event(event_ID, timeStart, timeEnd, className, location, classColor);
+
+
+        Calendar class_oldEndTime = null;
+        Calendar class_oldStartTime = null;
+
+        Calendar event_oldEndTime = null;
+        Calendar event_oldStartTime = null;
+
+        boolean Class_collision = false;
+        boolean event_collision = false;
+
+        for (int i = 0; i < myclasses.size(); i++) {
+
+            class_oldEndTime = myclasses.get(i).getEndTime();
+            class_oldStartTime = myclasses.get(i).getStartTime();
+
+
+            if (event.getEndTime().after(class_oldStartTime) && event.getStartTime().before(class_oldEndTime)) {
+                Class_collision = true;
+                break;
+            }
+        }
+
+
+        for (int j = 0; j < myevents.size(); j++) {
+
+            event_oldEndTime = myevents.get(j).getEndTime();
+            event_oldStartTime = myevents.get(j).getStartTime();
+
+
+            if (event.getEndTime().after(event_oldStartTime) && event.getStartTime().before(event_oldEndTime)) {
+                event_collision = true;
+                break;
+            }
+        }
+
+
+
+        if (!Class_collision && !event_collision) {
+            Toast.makeText(context, className + " Added", Toast.LENGTH_LONG).show();
+            event_ID++;
+            myclasses.add(event);
+        } else if (event_collision) {
+            Toast.makeText(context, "Event Collision", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(context, "Class Collision", Toast.LENGTH_LONG).show();
+        }
+
+        dayView.setEvents(myclasses);
+
+    }
+
+
+
 
 
     @Override
@@ -168,5 +234,11 @@ public class Calender extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+
+
+
+
 
 }

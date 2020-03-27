@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.framgia.sample.calendardayview.Profile">
+
+    <TextView
+        android:id="@+id/event4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/sidebar"
+        tools:layout_editor_absoluteY="479dp" />
+
+    <TextView
+        android:id="@+id/event1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/sidebar"
+        tools:layout_editor_absoluteY="373dp" />
+
+    <TextView
+        android:id="@+id/event2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/sidebar"
+        tools:layout_editor_absoluteY="409dp" />
+
+    <TextView
+        android:id="@+id/event3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/sidebar"
+        tools:layout_editor_absoluteY="445dp" />
+
+    <View
+        android:id="@+id/sidebar"
+        android:layout_width="81dp"
+        android:layout_height="match_parent"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="145dp"
+        android:layout_height="173dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toEndOf="@+id/sidebar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar" />
+
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Profile Bio"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:layout_editor_absoluteX="104dp" />
+
+    <TextView
+        android:id="@+id/firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="First Name"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        tools:layout_editor_absoluteY="53dp" />
+
+    <TextView
+        android:id="@+id/lastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Last Name"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/EventLists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Events"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="318dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
