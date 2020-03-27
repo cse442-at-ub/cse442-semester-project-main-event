@@ -14,6 +14,7 @@ public class LoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
         configureSeeAllEvent();
+        configureRegistration();
 
     }
 
@@ -29,6 +30,21 @@ public class LoginPage extends AppCompatActivity {
 
                     }
 
+                }
+        );
+    }
+
+    private  void configureRegistration(){
+        Button gotRegistration = (Button) findViewById(R.id.Register);
+
+        gotRegistration.setOnClickListener(
+                new Button.OnClickListener() {
+
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplication(), RegistrationPage.class);
+                        startActivity(intent);
+
+                    }
                 }
         );
     }
