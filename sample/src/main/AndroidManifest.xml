@@ -11,7 +11,9 @@
         <activity android:name=".RegistrationPage"></activity>
         <activity android:name=".Profile" />
         <activity android:name=".Event_Registration_Form" />
-        <activity android:name=".Calender" />
+        <activity
+            android:name=".Calender"
+            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".EventFinderPage" />
         <activity android:name=".PromotedEventsPage" />
         <activity
