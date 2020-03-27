@@ -33,7 +33,19 @@ public class MainActivity extends AppCompatActivity {
         configureCalendarButton();
         configureEventRegistrationButton();
         configureRegisterPageButton();
+        configureProfileButton();
 
+    }
+
+    private void configureProfileButton() {
+        Button Profile = (Button) findViewById((R.id.profileButton));
+        Profile.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Profile.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void configureEventRegistrationButton() {

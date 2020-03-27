@@ -16,18 +16,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.979" />
 
     <Button
         android:id="@+id/PromotedButton"
         android:layout_width="85dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="44dp"
         android:text="@string/PromotedButton"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/profileButton" />
 
     <Button
         android:id="@+id/EventFinderButton"
@@ -40,9 +40,9 @@
 
     <Button
         android:id="@+id/CalendarButton"
-        android:layout_width="85dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="84dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="28dp"
         android:text="Calendar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EventFinderButton" />
@@ -51,10 +51,11 @@
         android:id="@+id/register_event_button"
         android:layout_width="92dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="253dp"
         android:text="Register Event"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CalendarButton"
+        app:layout_constraintVertical_bias="0.135" />
 
     <Button
         android:id="@+id/RegisterPageButton"
@@ -66,5 +67,14 @@
         android:text="Register Account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="84dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="80dp"
+        android:text="Profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
