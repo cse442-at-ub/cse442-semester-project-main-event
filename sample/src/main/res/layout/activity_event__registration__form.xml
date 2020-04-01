@@ -83,12 +83,12 @@
         android:id="@+id/register_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="32dp"
         android:background="#00BBFF"
         android:text="Register"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toEndOf="@+id/sidebar"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 

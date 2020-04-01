@@ -34,7 +34,19 @@ public class MainActivity extends AppCompatActivity {
         configureEventRegistrationButton();
         configureRegisterPageButton();
         configureProfileButton();
+        configureSettingsButton();
 
+    }
+
+    private void configureSettingsButton() {
+        Button Settings = (Button) findViewById((R.id.settingsButton));
+        Settings.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Settings.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void configureProfileButton() {
