@@ -16,7 +16,6 @@ import android.widget.*;
  */
 
 
-
 public class MainActivity extends AppCompatActivity {
 
 
@@ -33,11 +32,35 @@ public class MainActivity extends AppCompatActivity {
         configureCalendarButton();
         configureEventRegistrationButton();
         configureRegisterPageButton();
+        configureProfileButton();
+        configureSettingsButton();
 
     }
 
+    private void configureSettingsButton() {
+        ImageButton Settings = findViewById((R.id.settingsButton));
+        Settings.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Settings.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void configureProfileButton() {
+        ImageButton Profile = findViewById((R.id.profileButton));
+        Profile.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Profile.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void configureEventRegistrationButton() {
-        Button Register_Event = (Button) findViewById((R.id.register_event_button));
+        ImageButton Register_Event = findViewById((R.id.register_event_button));
         Register_Event.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void configurePromotedButton(){
         //Create a reference to the promoted button
-        Button promotedButton = (Button) findViewById((R.id.PromotedButton));
+        ImageButton promotedButton =  findViewById((R.id.PromotedButton));
         //set event listener for the button
         promotedButton.setOnClickListener(new Button.OnClickListener(){
                                               @Override
@@ -63,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configureEventFinderButton(){
-        Button eventFinderButton = (Button) findViewById((R.id.EventFinderButton));
+        ImageButton eventFinderButton =  findViewById((R.id.EventFinderButton));
         eventFinderButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configureCalendarButton(){
-        Button calendarButton = (Button) findViewById((R.id.CalendarButton));
+        ImageButton calendarButton =  findViewById((R.id.CalendarButton));
         calendarButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configureRegisterPageButton(){
-        Button registerPageButton = (Button) findViewById(R.id.RegisterPageButton);
+        Button registerPageButton =  findViewById(R.id.RegisterPageButton);
         registerPageButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
