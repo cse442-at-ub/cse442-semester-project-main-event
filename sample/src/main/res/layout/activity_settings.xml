@@ -6,15 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.framgia.sample.calendardayview.Settings">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="79dp"
-        android:layout_height="741dp"
-        android:background="#03DDEC"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/signOut"
@@ -70,6 +62,102 @@
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notifications" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="55dp"
+        android:layout_height="730dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+    <ImageButton
+        android:id="@+id/profileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.159"
+        app:srcCompat="@drawable/profile_icon" />
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.76"
+        app:srcCompat="@drawable/settings_icon" />
+
+    <ImageButton
+        android:id="@+id/register_event_button"
+        android:layout_width="49dp"
+        android:layout_height="61dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.45"
+        app:srcCompat="@drawable/add_events_icon" />
+
+    <ImageButton
+        android:id="@+id/PromotedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.35000002"
+        app:srcCompat="@drawable/promoted_icon" />
+
+    <ImageButton
+        android:id="@+id/CalendarButton"
+        android:layout_width="45dp"
+        android:layout_height="54dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.55"
+        app:srcCompat="@drawable/calendar1" />
+
+    <ImageButton
+        android:id="@+id/EventFinderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.256"
+        app:srcCompat="@drawable/events_icon" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="51dp"
+        android:layout_height="43dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012"
+        app:srcCompat="@drawable/logo_samll" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
