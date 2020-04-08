@@ -27,7 +27,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://128.205.32.39/CSE442-542/2020-spring/cse-442u/public/conn.php";
+        String login_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/login.php";
         if (type.equals("login")) {
             try {
                 String user_name = params[1];
