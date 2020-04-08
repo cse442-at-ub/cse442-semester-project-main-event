@@ -6,9 +6,17 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a014a46e-0b15-414a-9dd9-ede72d23aa87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_settings.xml" afterDir="false" />
+    <list default="true" id="a014a46e-0b15-414a-9dd9-ede72d23aa87" name="Default Changelist" comment="Replace all the buttons on the main page with icons">
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/add_events_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/backgound_login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/calendar1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/events_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/logo_large.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/logo_samll.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/profile_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/promoted_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/settings_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -26,11 +34,9 @@
       <change beforePath="$PROJECT_DIR$/library/library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/library/library.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/sample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/sample.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_event__registration__form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_event__registration__form.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_profile_page.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_profile_page.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +44,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -47,15 +53,26 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="developer" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Zj7PdeW0ultvh0sHB8gJTY1daJ" />
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -161,5 +178,14 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Replace all the buttons on the main page with icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replace all the buttons on the main page with icons" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="266" height="518" key="Git.Branch.Popup" />
+    <state width="266" height="518" key="Git.Branch.Popup/1920.1080/3584.2240" />
+    <state width="266" height="518" key="Git.Branch.Popup@1920.1080" />
   </component>
 </project>
