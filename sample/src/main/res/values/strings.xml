@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Calendar Day View</string>
     <string name="PromotedButton">Promoted</string>
+    <string name="register_event">Register Event</string>
+    <string name="upload_image">Upload Image</string>
     <string-array name="my_events">
         <item>Barbecue Event</item>
         <item>CSE442 PM Meeting</item>

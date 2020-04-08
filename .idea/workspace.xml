@@ -6,17 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a014a46e-0b15-414a-9dd9-ede72d23aa87" name="Default Changelist" comment="Replace all the buttons on the main page with icons">
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/add_events_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/backgound_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/calendar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/calendar1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/events_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/logo_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/logo_samll.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/profile_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/promoted_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/settings_icon.png" afterDir="false" />
+    <list default="true" id="a014a46e-0b15-414a-9dd9-ede72d23aa87" name="Default Changelist" comment="Fixed the layout of the page to look more nicer&#10;Add all the icons to the page (all funtions)&#10;Bug: won't go to new line when entering the description!!">
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -27,16 +17,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__de_hdodenhof_circleimageview_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__de_hdodenhof_circleimageview_2_1_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/library/library.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/sample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/sample.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/Event_Registration_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/Event_Registration_Form.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/framgia/sample/calendardayview/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_event__registration__form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_event__registration__form.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +59,7 @@
   <component name="ProjectId" id="1Zj7PdeW0ultvh0sHB8gJTY1daJ" />
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -164,6 +151,14 @@
       <option name="presentableId" value="Default" />
       <updated>1585340626122</updated>
     </task>
+    <task id="LOCAL-00001" summary="Replace all the buttons on the main page with icons">
+      <created>1586311013638</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586311013638</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,7 +176,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Replace all the buttons on the main page with icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace all the buttons on the main page with icons" />
+    <MESSAGE value="Fixed the layout of the page to look more nicer&#10;Add all the icons to the page (all funtions)&#10;Bug: won't go to new line when entering the description!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the layout of the page to look more nicer&#10;Add all the icons to the page (all funtions)&#10;Bug: won't go to new line when entering the description!!" />
   </component>
   <component name="WindowStateProjectService">
     <state width="266" height="518" key="Git.Branch.Popup" />
