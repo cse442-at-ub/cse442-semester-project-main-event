@@ -31,6 +31,21 @@ public class RegistrationPage extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email_text);
 
         configureLoginButton();
+        configureSeeAllEventButton();
+
+    }
+
+    private  void configureSeeAllEventButton(){
+        TextView goToMain = (TextView) findViewById(R.id.GoToMain);
+        goToMain.setOnClickListener(new TextView.OnClickListener() {
+
+                                        public void onClick(View v) {
+                                            Intent intent = new Intent(getApplication(), MainActivity.class);
+                                            startActivity(intent);
+                                        }
+
+                                    }
+        );
     }
 
     private  void configureLoginButton(){
@@ -45,6 +60,8 @@ public class RegistrationPage extends AppCompatActivity {
                                     }
         );
     }
+
+
 
     public void OnReg(View view) {
         String str_username = username.getText().toString();
