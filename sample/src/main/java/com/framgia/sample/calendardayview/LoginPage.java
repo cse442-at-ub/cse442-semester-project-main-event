@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -24,8 +24,8 @@ public class LoginPage extends AppCompatActivity {
     }
 
     private  void configureSeeAllEventButton(){
-        Button goToMain = (Button) findViewById(R.id.GoToMain);
-        goToMain.setOnClickListener(new Button.OnClickListener() {
+        TextView goToMain = (TextView) findViewById(R.id.GoToMain);
+        goToMain.setOnClickListener(new TextView.OnClickListener() {
 
                                         public void onClick(View v) {
                                             Intent intent = new Intent(getApplication(), MainActivity.class);
@@ -37,9 +37,9 @@ public class LoginPage extends AppCompatActivity {
     }
 
     private  void configureRegisterButton(){
-        Button goToRegister = (Button) findViewById(R.id.Register);
-        goToRegister.setOnClickListener(new Button.OnClickListener() {
-
+        TextView goToRegister =  (TextView) findViewById(R.id.LogIn);
+        goToRegister.setOnClickListener(new TextView.OnClickListener() {
+            @Override
                                             public void onClick(View v) {
                                                 Intent intent = new Intent(getApplication(), RegistrationPage.class);
                                                 startActivity(intent);

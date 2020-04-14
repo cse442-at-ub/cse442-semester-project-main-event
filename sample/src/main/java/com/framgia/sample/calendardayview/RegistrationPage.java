@@ -1,10 +1,13 @@
 package com.framgia.sample.calendardayview;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedWriter;
@@ -27,7 +30,20 @@ public class RegistrationPage extends AppCompatActivity {
         password = (EditText) findViewById(R.id.password_text);
         email = (EditText) findViewById(R.id.email_text);
 
-//        configureRegisterButton();
+        configureLoginButton();
+    }
+
+    private  void configureLoginButton(){
+        TextView goToMain = (TextView) findViewById(R.id.LogIn);
+        goToMain.setOnClickListener(new TextView.OnClickListener() {
+
+                                        public void onClick(View v) {
+                                            Intent intent = new Intent(getApplication(), LoginPage.class);
+                                            startActivity(intent);
+                                        }
+
+                                    }
+        );
     }
 
     public void OnReg(View view) {
