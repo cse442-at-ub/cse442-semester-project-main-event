@@ -23,6 +23,18 @@ public class Settings extends AppCompatActivity {
         configureProfileButton();
         configureSettingsButton();
         configureLogo();
+        configureLogIn();
+    }
+
+    private void configureLogIn() {
+        Button Settings = findViewById((R.id.signIn));
+        Settings.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),LoginPage.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void configureLogo() {
