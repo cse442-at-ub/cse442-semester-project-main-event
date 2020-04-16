@@ -25,4 +25,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':library')
     implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
 }

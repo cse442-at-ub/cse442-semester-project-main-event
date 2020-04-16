@@ -52,6 +52,13 @@ public class LoginPage extends AppCompatActivity {
     public void OnLogin(View view) {
         String username = UsernameEt.getText().toString();
         String password = PasswordEt.getText().toString();
+
+        Intent i = new Intent(getBaseContext(),AddClassActivity.class);
+        //Set the Data to pass
+        i.putExtra("userName", username);
+        startActivity(i);
+
+
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, username, password);

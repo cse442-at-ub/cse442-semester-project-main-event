@@ -137,7 +137,9 @@
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="0.45"
-        app:srcCompat="@drawable/add_events_icon" />
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/reg_icon" />
 
     <ImageButton
         android:id="@+id/PromotedButton"
@@ -161,19 +163,23 @@
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="0.55"
-        app:srcCompat="@drawable/calendar1" />
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/cal_icon" />
 
     <ImageButton
         android:id="@+id/EventFinderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="54dp"
         android:background="#00BBFF"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="0.256"
-        app:srcCompat="@drawable/events_icon" />
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/event_icon" />
 
     <ImageView
         android:id="@+id/logo"
