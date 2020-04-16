@@ -136,8 +136,9 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         //if user inputs the right info, go to the main page(login successful)
         if(result.equals("Login success")) {
             context.startActivity(new Intent(context, MainActivity.class));
-
         }
+
+
     }
 
     @Override
