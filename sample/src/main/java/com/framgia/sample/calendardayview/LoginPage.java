@@ -57,7 +57,7 @@ public class LoginPage extends AppCompatActivity {
     private void configureRegisterButton() {
         TextView goToRegister = (TextView) findViewById(R.id.LogIn);
         goToRegister.setOnClickListener(new TextView.OnClickListener() {
-            @Override
+                                            @Override
                                             public void onClick(View v) {
                                                 Intent intent = new Intent(getApplication(), RegistrationPage.class);
                                                 startActivity(intent);
