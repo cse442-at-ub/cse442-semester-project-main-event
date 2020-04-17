@@ -230,7 +230,7 @@ public class Calender extends AppCompatActivity {
             String end_hour = String.valueOf(endHour);
             String end_min = String.valueOf(endMin);
 
-            String type = "addEvent";
+            String type = "addCalendarEvent";
             String user_name = "mohammed12";
             BackgroundWorker backgroundWorker = new BackgroundWorker(context);
             backgroundWorker.execute(type, user_name, className, start_hour, start_min, end_hour, end_min, location);

@@ -2,6 +2,7 @@ package com.framgia.sample.calendardayview;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.View;
 
@@ -17,9 +18,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-/**
- * Created by ProgrammingKnowledge on 1/5/2016.
- */
+
 public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
     Context context;
     AlertDialog alertDialog;
@@ -33,7 +32,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
         String type = params[0];
         String login_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/login.php";
         String account_register_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/account-register.php";
-        String save_event_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/save-event.php";
+        String save_calendar_event_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/save-event.php";
         if(type.equals("login")) {
             try {
                 String user_name = params[1];
@@ -102,7 +101,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if (type.equals("addEvent")) {
+        } else if (type.equals("addCalendarEvent")) {
             try {
                 String user_name = params[1];
                 String class_name = params[2];
@@ -112,7 +111,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
                 String end_min = params[6];
                 String location = params[7];
 
-                URL url = new URL(save_event_url);
+                URL url = new URL(save_calendar_event_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
@@ -167,6 +166,11 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
         if (type.equals("login") || type.equals("account_register")) {
             alertDialog.setMessage(result);
             alertDialog.show();
+        }
+
+        //if user inputs the right info, go to the main page(login successful)
+        if(result.equals("Login success")) {
+            context.startActivity(new Intent(context, MainActivity.class));
         }
     }
 
