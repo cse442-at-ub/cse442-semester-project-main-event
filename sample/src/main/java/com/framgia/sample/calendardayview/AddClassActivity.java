@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.framgia.library.calendardayview.CalendarDayView;
 import com.framgia.library.calendardayview.EventView;
@@ -51,12 +52,52 @@ public class AddClassActivity extends AppCompatActivity {
         EditText edit5 = (EditText)findViewById(R.id.editText5);
         EditText edit6 = (EditText)findViewById(R.id.editText6);
 
+
+        if (edit2.getText().toString().matches("")) {
+            Toast.makeText(this, "You did not enter valid Start Hour", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (edit3.getText().toString().matches("")) {
+            Toast.makeText(this, "You did not enter valid Start Min", Toast.LENGTH_SHORT).show();
+            return;
+        } else if(edit4.getText().toString().matches("")) {
+            Toast.makeText(this, "You did not enter valid  End Hour", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (edit5.getText().toString().matches("")) {
+            Toast.makeText(this, "You did not enter valid  End Min", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String classname = edit1.getText().toString();
         int startHour = Integer.parseInt(edit2.getText().toString());
         int startMin = Integer.parseInt(edit3.getText().toString());
         int endHour = Integer.parseInt(edit4.getText().toString());
         int endMin = Integer.parseInt(edit5.getText().toString());
         String location = edit6.getText().toString();
+
+        if (startHour < 8 || startHour > 22) {
+            Toast.makeText(this, "You did not enter valid Start Hour", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (startMin < 0 || startMin > 60) {
+            Toast.makeText(this, "You did not enter valid Start Min", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (endHour < 8 || endHour > 22) {
+            Toast.makeText(this, "You did not enter valid  End Hour", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (endMin < 0 || endMin > 60) {
+            Toast.makeText(this, "You did not enter valid  End Min", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+
+        if (classname.matches("")) {
+            Toast.makeText(this, "You did not enter a Class Name", Toast.LENGTH_SHORT).show();
+            return;
+        } else if(location.matches("")) {
+            Toast.makeText(this, "You did not enter a valid Location", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
 
 
         cal.setClasses(getApplicationContext() , classname, startHour, startMin, endHour, endMin, location, classColor);

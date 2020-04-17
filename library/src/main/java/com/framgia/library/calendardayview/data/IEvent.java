@@ -10,4 +10,7 @@ public interface IEvent extends ITimeDuration {
     String getName();
 
     int getColor();
+
+    // my code
+    String getLocation();
 }
