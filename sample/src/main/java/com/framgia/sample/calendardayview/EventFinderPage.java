@@ -35,6 +35,7 @@ public class EventFinderPage extends AppCompatActivity {
         configureEventRegistrationButton();
         configureProfileButton();
         configureSettingsButton();
+        configureLogo();
 
         //bind eventList to the ListView on the activity_event_finder_page
         eventList = (ListView) findViewById(R.id.event_list);
@@ -53,6 +54,18 @@ public class EventFinderPage extends AppCompatActivity {
         //binds ListView to adapter
         eventList.setAdapter(adapter);
 
+    }
+
+
+    private void configureLogo() {
+        ImageButton Settings = findViewById((R.id.logo));
+        Settings.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),LoginPage.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void configureSettingsButton() {

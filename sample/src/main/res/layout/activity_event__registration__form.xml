@@ -67,30 +67,18 @@
         app:layout_constraintStart_toEndOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/event_Name" />
 
-    <EditText
-        android:id="@+id/description"
-        android:layout_width="208dp"
-        android:layout_height="115dp"
-        android:ems="10"
-        android:hint="Description"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/promote_Check" />
-
     <Button
         android:id="@+id/register_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="40dp"
         android:background="#00BBFF"
         android:text="Register"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintStart_toEndOf="@+id/view" />
 
     <EditText
         android:id="@+id/Time"
@@ -199,7 +187,7 @@
         app:layout_constraintVertical_bias="0.256"
         app:srcCompat="@drawable/events_icon" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/logo"
         android:layout_width="51dp"
         android:layout_height="43dp"
@@ -210,6 +198,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.050000012"
         app:srcCompat="@drawable/logo_samll" />
+
+    <EditText
+        android:id="@+id/desription"
+        android:layout_width="235dp"
+        android:layout_height="168dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Desription"
+        android:inputType="textMultiLine"
+        android:background="@null"
+
+        app:layout_constraintBottom_toTopOf="@+id/register_Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/promote_Check"
+        app:layout_constraintVertical_bias="0.299" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

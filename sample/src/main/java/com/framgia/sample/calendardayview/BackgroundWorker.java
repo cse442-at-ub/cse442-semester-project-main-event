@@ -1,9 +1,12 @@
 package com.framgia.sample.calendardayview;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.View;
+import android.widget.Button;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -16,6 +19,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import android.os.Bundle;
+import android.view.View;
+import android.content.Intent;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * Created by ProgrammingKnowledge on 1/5/2016.
@@ -23,6 +35,8 @@ import java.net.URLEncoder;
 public class BackgroundWorker extends AsyncTask<String,Void,String> {
     Context context;
     AlertDialog alertDialog;
+
+
     BackgroundWorker (Context ctx) {
         context = ctx;
     }
@@ -55,10 +69,12 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 while((line = bufferedReader.readLine())!= null) {
                     result += line;
                 }
+
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
                 return result;
+
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -107,12 +123,22 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Status");
+
     }
 
     @Override
-    protected void onPostExecute(String result) {
+    public void onPostExecute(String result)
+
+    {
         alertDialog.setMessage(result);
         alertDialog.show();
+
+        //if user inputs the right info, go to the main page(login successful)
+        if(result.equals("Login success")) {
+            context.startActivity(new Intent(context, MainActivity.class));
+        }
+
+
     }
 
     @Override
