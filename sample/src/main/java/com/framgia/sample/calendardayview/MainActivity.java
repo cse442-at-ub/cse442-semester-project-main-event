@@ -31,10 +31,22 @@ public class MainActivity extends AppCompatActivity {
         configureEventFinderButton();
         configureCalendarButton();
         configureEventRegistrationButton();
-        configureRegisterPageButton();
+
         configureProfileButton();
         configureSettingsButton();
+        configureLogo();
 
+    }
+
+    private void configureLogo() {
+        ImageButton Settings = findViewById((R.id.logo));
+        Settings.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),LoginPage.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void configureSettingsButton() {
@@ -108,16 +120,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void configureRegisterPageButton(){
-        Button registerPageButton =  findViewById(R.id.RegisterPageButton);
-        registerPageButton.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,RegistrationPage.class);
-                startActivity(intent);
-            }
-        });
-    }
 
 
 

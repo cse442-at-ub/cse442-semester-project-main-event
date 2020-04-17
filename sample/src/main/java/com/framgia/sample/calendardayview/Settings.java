@@ -22,6 +22,30 @@ public class Settings extends AppCompatActivity {
         configureEventRegistrationButton();
         configureProfileButton();
         configureSettingsButton();
+        configureLogo();
+        configureLogIn();
+    }
+
+    private void configureLogIn() {
+        Button Settings = findViewById((R.id.signIn));
+        Settings.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),LoginPage.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void configureLogo() {
+        ImageButton Settings = findViewById((R.id.logo));
+        Settings.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),LoginPage.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

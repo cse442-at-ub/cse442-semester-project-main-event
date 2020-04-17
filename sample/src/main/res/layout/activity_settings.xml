@@ -7,6 +7,17 @@
     tools:context="com.framgia.sample.calendardayview.Settings">
 
 
+    <Button
+        android:id="@+id/signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        app:layout_constraintBottom_toTopOf="@+id/editProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.395"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.687" />
 
     <Button
         android:id="@+id/signOut"
@@ -74,6 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
     <ImageButton
         android:id="@+id/profileButton"
         android:layout_width="wrap_content"
@@ -146,7 +158,7 @@
         app:layout_constraintVertical_bias="0.256"
         app:srcCompat="@drawable/events_icon" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/logo"
         android:layout_width="51dp"
         android:layout_height="43dp"
@@ -157,7 +169,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.050000012"
         app:srcCompat="@drawable/logo_samll" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
