@@ -31,8 +31,6 @@ public class EventView extends FrameLayout {
 
     protected TextView mEventName;
 
-    protected TextView mEventLocation;
-
     public EventView(Context context) {
         super(context);
         init(null);
@@ -54,7 +52,6 @@ public class EventView extends FrameLayout {
         mEventHeader = (RelativeLayout) findViewById(R.id.item_event_header);
         mEventContent = (LinearLayout) findViewById(R.id.item_event_content);
         mEventName = (TextView) findViewById(R.id.item_event_name);
-        mEventLocation = (TextView) findViewById(R.id.item_event_location);
         mEventHeaderText1 = (TextView) findViewById(R.id.item_event_header_text1);
         mEventHeaderText2 = (TextView) findViewById(R.id.item_event_header_text2);
 
@@ -93,7 +90,6 @@ public class EventView extends FrameLayout {
     public void setEvent(IEvent event) {
         this.mEvent = event;
         mEventName.setText(String.valueOf(event.getName()));
-        mEventLocation.setText(String.valueOf(event.getLocation()));
         mEventContent.setBackgroundColor(event.getColor());
     }
 

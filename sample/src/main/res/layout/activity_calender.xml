@@ -14,30 +14,12 @@
         android:background="#FFF"
         android:paddingTop="@dimen/dayHeight"
         >
-
-
         <com.framgia.library.calendardayview.CalendarDayView
             android:id="@+id/calendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:eventMarginLeft="0dp"
-            app:dayHeight="@dimen/dayHeight">
-
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="center|right"
-                android:clickable="true"
-                app:srcCompat="@android:drawable/ic_menu_add" />
-
-
-        </com.framgia.library.calendardayview.CalendarDayView>
-
+            app:dayHeight="@dimen/dayHeight"/>
     </ScrollView>
 
 </RelativeLayout>

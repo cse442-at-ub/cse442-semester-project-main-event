@@ -29,20 +29,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/eventColor"
-        android:gravity="center"
-        android:orientation="vertical">
-
+        android:gravity="center">
         <TextView
             android:id="@+id/item_event_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Event" />
-
-        <TextView
-            android:id="@+id/item_event_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Location" />
+            android:layout_gravity="center"
+            android:text="Event"/>
     </LinearLayout>
 
 </LinearLayout>
