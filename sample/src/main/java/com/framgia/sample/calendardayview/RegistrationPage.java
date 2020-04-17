@@ -2,6 +2,7 @@ package com.framgia.sample.calendardayview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -67,9 +68,19 @@ public class RegistrationPage extends AppCompatActivity {
         String str_username = username.getText().toString();
         String str_password = password.getText().toString();
         String str_e_mail = email.getText().toString();
-        String type = "account_register";
-        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, str_username, str_password, str_e_mail);
+        if(str_e_mail.length() < 7  || str_username.length() < 7 || str_password.length() < 7){
+            AlertDialog alert = new AlertDialog.Builder(this).create();
+            alert.setTitle("Invalid Input");
+            alert.setMessage("All inputs must be 7 or more characters long");
+            alert.show();
+        } else {
+            String type = "account_register";
+            BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+            backgroundWorker.execute(type, str_username, str_password, str_e_mail);
+            username.getText().clear();
+            password.getText().clear();
+            email.getText().clear();
+        }
     }
 
 //    public void saveDetails(String file){
