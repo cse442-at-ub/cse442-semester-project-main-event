@@ -136,4 +136,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.079" />
 
+    <TextView
+        android:id="@+id/input_hint"
+        android:layout_width="96dp"
+        android:layout_height="26dp"
+        android:text="Input size > 6"
+        app:layout_constraintEnd_toEndOf="@+id/register_button"
+        app:layout_constraintTop_toBottomOf="@+id/password_text" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,12 +17,12 @@ public class LoginPage extends AppCompatActivity {
 
         String username = UsernameEt.getText().toString();
         String password = PasswordEt.getText().toString();
+
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, username, password);
 
-
-
+        PasswordEt.getText().clear();
 
 
     }
