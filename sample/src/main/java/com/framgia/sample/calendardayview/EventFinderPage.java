@@ -37,6 +37,8 @@ public class EventFinderPage extends AppCompatActivity {
         configureSettingsButton();
         configureLogo();
 
+
+
         //bind eventList to the ListView on the activity_event_finder_page
         eventList = (ListView) findViewById(R.id.event_list);
 

@@ -14,11 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class Event_Registration_Form extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event__registration__form);
         setTitle("Event Registration Page");
+
 
         configurePromotedButton();
         configureEventFinderButton();

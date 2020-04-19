@@ -18,6 +18,7 @@ import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
 
+    public String current_user = "";
 
 
     @Override
@@ -26,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Main Page");
 
+
+        Bundle extra = getIntent().getExtras();
+        if(extra != null)
+         current_user = extra.getString("user_name");
 
         configurePromotedButton();
         configureEventFinderButton();
@@ -115,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //TODO: complete this function after the calendar page is created.
                 Intent intent = new Intent(MainActivity.this,Calender.class);
+                intent.putExtra("current_user", current_user);
                 startActivity(intent);
             }
         });

@@ -40,7 +40,7 @@ public class Calender extends AppCompatActivity {
 
     public static ArrayList<IEvent> myclasses = new ArrayList<>();
     //public static ArrayList<IPopup> myevents  = new ArrayList<>();
-    //private static String user_name;
+    public static String user_name = "";
 
     public static int event_ID = 1;
 
@@ -51,6 +51,12 @@ public class Calender extends AppCompatActivity {
 
         dayView = (CalendarDayView) findViewById(R.id.calendar);
         dayView.setLimitTime(8, 22);
+
+        Bundle extra = getIntent().getExtras();
+        if(extra != null) {
+            user_name = extra.getString("current_user");
+        }
+
 
         ((CdvDecorationDefault) (dayView.getDecoration())).setOnEventClickListener(
                 new EventView.OnEventClickListener() {
@@ -82,10 +88,6 @@ public class Calender extends AppCompatActivity {
         });
 
 
-
-        //Intent i = getIntent();
-        //The second parameter below is the default string returned if the value is not there.
-        // user_name = i.getExtras().getString("userName","");
 
 
 
@@ -231,7 +233,7 @@ public class Calender extends AppCompatActivity {
             String end_min = String.valueOf(endMin);
 
             String type = "addCalendarEvent";
-            String user_name = "mohammed12";
+
             BackgroundWorker backgroundWorker = new BackgroundWorker(context);
             backgroundWorker.execute(type, user_name, className, start_hour, start_min, end_hour, end_min, location);
 
@@ -243,12 +245,6 @@ public class Calender extends AppCompatActivity {
 
     }
 
-    /*public void saveData(String className, String startHour, String startMin, String endHour, String endMin, String location) {
-        String type = "addEvent";
-        user_name = "mohammed12";
-        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, user_name, className, startHour, startMin, endHour, endMin, location);
-    }*/
 
 
 
@@ -272,10 +268,6 @@ public class Calender extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }*/
-
-
-
-
 
 
 

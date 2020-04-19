@@ -31,8 +31,9 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_gravity="center|right"
+                android:layout_gravity="center|right|end"
                 android:clickable="true"
+                app:layout_behavior="com.framgia.sample.calendardayview.FAB_Hide_on_Scroll"
                 app:srcCompat="@android:drawable/ic_menu_add" />
 
 

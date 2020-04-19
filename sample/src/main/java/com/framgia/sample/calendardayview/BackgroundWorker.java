@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 
 import java.io.BufferedReader;
@@ -60,7 +61,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
-                return new String[]{result, type};
+                return new String[]{result, type, user_name};
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -170,8 +171,14 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
 
         //if user inputs the right info, go to the main page(login successful)
         if(result.equals("Login success")) {
-            context.startActivity(new Intent(context, MainActivity.class));
+            String user_Name = values[2];
+            Intent intent = new Intent(context, MainActivity.class);
+            intent.putExtra("user_name", user_Name);
+            context.startActivity(intent);
+
         }
+
+
     }
 
     @Override
