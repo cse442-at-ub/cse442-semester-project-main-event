@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,14 +16,21 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class Event_Registration_Form extends AppCompatActivity {
 
-
-
+    EditText Et_Event_Name, Et_Location, Et_Start, Et_End, Et_RSVP, Et_Description;
+    CheckBox Promote;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event__registration__form);
         setTitle("Event Registration Page");
 
+        Et_Event_Name = (EditText)findViewById(R.id.event_Name);
+        Et_Location = (EditText)findViewById(R.id.location);
+        Et_Start = (EditText)findViewById(R.id.start_time);
+        Et_End = (EditText)findViewById(R.id.end_time);
+        Et_RSVP = (EditText)findViewById(R.id.rsvp);
+        Promote = (CheckBox) findViewById(R.id.promote_Check);
+        Et_Description = (EditText)findViewById(R.id.desription);
 
         configurePromotedButton();
         configureEventFinderButton();
@@ -114,6 +123,23 @@ public class Event_Registration_Form extends AppCompatActivity {
         });
     }
 
+    public void OnRegisterEvent(View view){
+        String str_Event_Name = Et_Event_Name.getText().toString();
+        String str_Location = Et_Location.getText().toString();
+        String str_Start = Et_Start.getText().toString();
+        String str_End = Et_End.getText().toString();
+        String str_RSVP = Et_RSVP.getText().toString();
+        String str_Description = Et_Description.getText().toString();
+        String type = "event_register";
+        String str_Promote;
+        if (Promote.isChecked())
+            str_Promote = "1";
+        else
+            str_Promote = "0";
+
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type, str_Event_Name, str_Location, str_Start, str_End, str_RSVP, str_Promote, str_Description);
+    }
 
 
 }
