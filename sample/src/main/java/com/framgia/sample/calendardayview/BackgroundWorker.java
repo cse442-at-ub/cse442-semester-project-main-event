@@ -34,6 +34,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
         String login_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/login.php";
         String account_register_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/account-register.php";
         String save_calendar_event_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/save-event.php";
+        String register_event_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/event-register.php";
         if(type.equals("login")) {
             try {
                 String user_name = params[1];
@@ -126,6 +127,51 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
                         + URLEncoder.encode("end_hour","UTF-8")+"="+URLEncoder.encode(end_hour,"UTF-8")+"&"
                         + URLEncoder.encode("end_min","UTF-8")+"="+URLEncoder.encode(end_min,"UTF-8")+"&"
                         + URLEncoder.encode("location","UTF-8")+"="+URLEncoder.encode(location,"UTF-8");
+
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                String result="";
+                String line="";
+                while((line = bufferedReader.readLine())!= null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return new String[]{result, type};
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (type.equals("event_register")) {
+            try {
+                String Event_name = params[1];
+                String Location = params[2];
+                String Start = params[3];
+                String End = params[4];
+                String RSVP = params[5];
+                String Promote = params[6];
+                String Description = params[7];
+
+                URL url = new URL(register_event_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("event_name","UTF-8")+"="+URLEncoder.encode(Event_name,"UTF-8")+"&"
+                        + URLEncoder.encode("location","UTF-8")+"="+URLEncoder.encode(Location,"UTF-8")+"&"
+                        + URLEncoder.encode("start_time","UTF-8")+"="+URLEncoder.encode(Start,"UTF-8")+"&"
+                        + URLEncoder.encode("end_time","UTF-8")+"="+URLEncoder.encode(End,"UTF-8")+"&"
+                        + URLEncoder.encode("rsvp","UTF-8")+"="+URLEncoder.encode(RSVP,"UTF-8")+"&"
+                        + URLEncoder.encode("promote","UTF-8")+"="+URLEncoder.encode(Promote,"UTF-8")+"&"
+                        + URLEncoder.encode("description","UTF-8")+"="+URLEncoder.encode(Description,"UTF-8");
 
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
