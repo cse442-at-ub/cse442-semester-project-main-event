@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -31,7 +32,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_gravity="center|right|end"
+                android:layout_gravity="center|right"
                 android:clickable="true"
                 app:layout_behavior="com.framgia.sample.calendardayview.FAB_Hide_on_Scroll"
                 app:srcCompat="@android:drawable/ic_menu_add" />
