@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.framgia.sample.calendardayview.EventDescription">
+
+    <TextView
+        android:id="@+id/event_Name"
+        android:layout_width="192dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginLeft="107dp"
+        android:layout_marginTop="17dp"
+        android:text="Sleeping"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/event_location"
+        android:layout_width="186dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="111dp"
+        android:layout_marginLeft="111dp"
+        android:layout_marginTop="33dp"
+        android:text="My Home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event_Name" />
+
+    <TextView
+        android:id="@+id/event_time"
+        android:layout_width="187dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="29dp"
+        android:text="12:00AM - 11:59PM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event_location" />
+
+    <TextView
+        android:id="@+id/event_rsvp_limit"
+        android:layout_width="189dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginLeft="107dp"
+        android:layout_marginTop="18dp"
+        android:text="No RSVP Limit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event_time" />
+
+    <TextView
+        android:id="@+id/event_description"
+        android:layout_width="290dp"
+        android:layout_height="214dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="36dp"
+        android:text="This addictive activity will keep you healthy and coming back for more!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event_rsvp_limit" />
+</androidx.constraintlayout.widget.ConstraintLayout>
