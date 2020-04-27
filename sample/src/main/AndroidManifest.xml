@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.framgia.sample.calendardayview">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Settings"
+        <activity android:name=".EventDescription"></activity>
+        <activity
+            android:name=".Settings"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity
+            android:name=".LoginPage"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        </activity>
-        <activity android:name=".LoginPage"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegistrationPage"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        </activity>
-        <activity android:name=".Profile"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        </activity>
-
-        <activity android:name=".Event_Registration_Form"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        </activity>
+        <activity
+            android:name=".RegistrationPage"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity
+            android:name=".Profile"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity
+            android:name=".Event_Registration_Form"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
         <activity
             android:name=".Calender"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".EventFinderPage"
-            >
-        </activity>
-        <activity android:name=".PromotedEventsPage"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        </activity>
+        <activity android:name=".EventFinderPage"></activity>
+        <activity
+            android:name=".PromotedEventsPage"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
         <activity
             android:name=".AddClassActivity"
             android:label="Add Class"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

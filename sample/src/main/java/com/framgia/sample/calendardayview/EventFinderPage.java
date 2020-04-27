@@ -8,11 +8,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +41,7 @@ public class EventFinderPage extends AppCompatActivity {
 
 
 
+
         //bind eventList to the ListView on the activity_event_finder_page
         eventList = (ListView) findViewById(R.id.event_list);
 
@@ -56,6 +59,20 @@ public class EventFinderPage extends AppCompatActivity {
         //binds ListView to adapter
         eventList.setAdapter(adapter);
 
+        configureEventListButton();
+
+    }
+
+
+
+    private void configureEventListButton() {
+        eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(),EventDescription.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
