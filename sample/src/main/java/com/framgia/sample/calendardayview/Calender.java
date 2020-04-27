@@ -4,9 +4,12 @@ package com.framgia.sample.calendardayview;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 
@@ -24,6 +27,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
@@ -44,10 +51,53 @@ public class Calender extends AppCompatActivity {
 
     public static int event_ID = 1;
 
+
+    // Floating Action Button
+    FloatingActionButton fab;
+    RelativeLayout rootLayout;
+
+    //Save the FAB's active status
+    //false -> fab = close
+    //true -> fab = open
+    private boolean FAB_Status = false;
+
+    //Animations
+    Animation show_fab;
+    Animation hide_fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
+
+        rootLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
+
+        //Floating Action Buttons
+        fab = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
+
+        //Animations
+        show_fab = AnimationUtils.loadAnimation(getApplication(), R.anim.fab_show);
+        hide_fab = AnimationUtils.loadAnimation(getApplication(), R.anim.fab_hide);
+
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (FAB_Status == false) {
+                    //Display FAB menu
+                    expandFAB();
+                    FAB_Status = true;
+                } else {
+                    //Close FAB menu
+                    hideFAB();
+                    FAB_Status = false;
+                }
+            }
+        });
+
+
+
 
         dayView = (CalendarDayView) findViewById(R.id.calendar);
         dayView.setLimitTime(8, 22);
@@ -63,6 +113,14 @@ public class Calender extends AppCompatActivity {
                     @Override
                     public void onEventClick(EventView view, IEvent data) {
                         Log.e("TAG", "onEventClick:" + data.getName());
+                    }
+
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (FAB_Status) {
+                            hideFAB();
+                            FAB_Status = false;
+                        }
+                        return false;
                     }
 
                     @Override
@@ -242,6 +300,32 @@ public class Calender extends AppCompatActivity {
         }
 
         dayView.setEvents(myclasses);
+
+    }
+
+
+    private void expandFAB() {
+
+        //Floating Action Button 1
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) fab.getLayoutParams();
+        layoutParams.rightMargin += (int) (fab.getWidth() * 1.7);
+        layoutParams.bottomMargin += (int) (fab.getHeight() * 0.25);
+        fab.setLayoutParams(layoutParams);
+        fab.startAnimation(show_fab);
+        fab.setClickable(true);
+
+    }
+
+
+    private void hideFAB() {
+
+        //Floating Action Button 1
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) fab.getLayoutParams();
+        layoutParams.rightMargin -= (int) (fab.getWidth() * 1.7);
+        layoutParams.bottomMargin -= (int) (fab.getHeight() * 0.25);
+        fab.setLayoutParams(layoutParams);
+        fab.startAnimation(hide_fab);
+        fab.setClickable(false);
 
     }
 
