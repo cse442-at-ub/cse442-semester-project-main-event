@@ -7,12 +7,12 @@
     tools:context="com.framgia.sample.calendardayview.EventDescription">
 
     <TextView
-        android:id="@+id/event_Name"
+        android:id="@+id/event_name"
         android:layout_width="192dp"
         android:layout_height="55dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginLeft="107dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="28dp"
         android:text="Sleeping"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,20 +21,20 @@
         android:id="@+id/event_location"
         android:layout_width="186dp"
         android:layout_height="45dp"
-        android:layout_marginStart="111dp"
-        android:layout_marginLeft="111dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="24dp"
         android:text="My Home"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_Name" />
+        app:layout_constraintTop_toBottomOf="@+id/event_name" />
 
     <TextView
         android:id="@+id/event_time"
         android:layout_width="187dp"
         android:layout_height="43dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="32dp"
         android:text="12:00AM - 11:59PM"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_location" />
@@ -43,9 +43,9 @@
         android:id="@+id/event_rsvp_limit"
         android:layout_width="189dp"
         android:layout_height="41dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginLeft="107dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="36dp"
         android:text="No RSVP Limit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_time" />
@@ -54,9 +54,9 @@
         android:id="@+id/event_description"
         android:layout_width="290dp"
         android:layout_height="214dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginLeft="58dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="64dp"
         android:text="This addictive activity will keep you healthy and coming back for more!"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_rsvp_limit" />

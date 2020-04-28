@@ -69,6 +69,8 @@
   </component>
   <component name="ProjectId" id="1Zj7PdeW0ultvh0sHB8gJTY1daJ" />
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_R" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-28T20:41:09.078Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
