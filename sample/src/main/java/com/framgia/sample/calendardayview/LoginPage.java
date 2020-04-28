@@ -9,6 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class LoginPage extends AppCompatActivity {
 
     EditText UsernameEt, PasswordEt;
@@ -33,6 +39,7 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
         configureSeeAllEventButton();
         configureRegisterButton();
+        getEventsFromDB();
 
 
 
@@ -65,6 +72,12 @@ public class LoginPage extends AppCompatActivity {
 
                                         }
         );
+    }
+
+    private void getEventsFromDB() {
+        String type = "retrieve_events";
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type);
     }
 
 

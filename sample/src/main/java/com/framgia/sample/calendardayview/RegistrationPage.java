@@ -83,43 +83,6 @@ public class RegistrationPage extends AppCompatActivity {
         }
     }
 
-//    public void saveDetails(String file){
-//        String username = user.getText().toString();
-//        String password = pass.getText().toString();
-//        String email_address = email.getText().toString();
-//        String text_to_write = username + "\n" + password + "\n" + email_address;
-//
-//        FileOutputStream fos = null;
-//        BufferedWriter bw = null;
-//
-//        try {
-//            fos = openFileOutput(file, MODE_PRIVATE | MODE_APPEND);
-//            bw = new BufferedWriter(new OutputStreamWriter(fos));
-//
-//            bw.write(text_to_write);
-//            bw.newLine();
-//
-//
-//            user.getText().clear();
-//            pass.getText().clear();
-//            email.getText().clear();
-//            Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if(fos != null){
-//                try {
-//                    bw.close();
-//                    fos.close();
-//
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//    }
 
 //    private void configureRegisterButton(){
 //        Button registerButton = (Button) findViewById(R.id.register_button);

@@ -9,6 +9,8 @@ import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,6 +20,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
@@ -196,7 +200,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
             }
         } else if (type.equals("retrieve_events")) {
             try {
-                String checkPromoted = params[1];
+                String checkPromoted = "0";
 
                 URL url = new URL(retrieve_events_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -221,7 +225,34 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
-                return new String[]{result, type};
+
+                //do it again
+                checkPromoted = "1";
+
+                URL url1 = new URL(retrieve_events_url);
+                HttpURLConnection httpURLConnection1 = (HttpURLConnection)url1.openConnection();
+                httpURLConnection1.setRequestMethod("POST");
+                httpURLConnection1.setDoOutput(true);
+                httpURLConnection1.setDoInput(true);
+                OutputStream outputStream1 = httpURLConnection1.getOutputStream();
+                BufferedWriter bufferedWriter1 = new BufferedWriter(new OutputStreamWriter(outputStream1, "UTF-8"));
+                String post_data1 = URLEncoder.encode("check_promoted","UTF-8")+"="+URLEncoder.encode(checkPromoted,"UTF-8")+"&";
+
+                bufferedWriter1.write(post_data1);
+                bufferedWriter1.flush();
+                bufferedWriter1.close();
+                outputStream1.close();
+                InputStream inputStream1 = httpURLConnection1.getInputStream();
+                BufferedReader bufferedReader1 = new BufferedReader(new InputStreamReader(inputStream1,"iso-8859-1"));
+                String result1="";
+                String line1="";
+                while((line1 = bufferedReader1.readLine())!= null) {
+                    result1 += line1;
+                }
+                bufferedReader1.close();
+                inputStream1.close();
+                httpURLConnection1.disconnect();
+                return new String[]{result, type, result1};
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -259,10 +290,60 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
         }
 
         if(type.equals("retrieve_events")) {
-            alertDialog.setMessage(result);
-            alertDialog.show();
-            Intent intent = new Intent(context, EventFinderPage.class);
-            intent.putExtra("events", result);
+            String result2 = values[2];
+            String fileName = "NonPromotedEvents.txt";
+
+            FileOutputStream fos = null;
+            BufferedWriter bw = null;
+            try {
+                fos = context.openFileOutput(fileName, MODE_PRIVATE);
+                bw = new BufferedWriter(new OutputStreamWriter(fos));
+                bw.write(result);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if(fos != null){
+                    try {
+                        bw.close();
+                        fos.close();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            //do it again for promoted events
+            fileName = "PromotedEvents.txt";
+            try {
+                fos = context.openFileOutput(fileName, MODE_PRIVATE);
+                bw = new BufferedWriter(new OutputStreamWriter(fos));
+                bw.write(result2);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if(fos != null){
+                    try {
+                        bw.close();
+                        fos.close();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+
+
+
+//            alertDialog.setMessage(result);
+//            alertDialog.show();
+//            Intent intent = new Intent(context, EventFinderPage.class);
+//            intent.putExtra("events", result);
+//            context.startActivity(intent);
         }
 
 

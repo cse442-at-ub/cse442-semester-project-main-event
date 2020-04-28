@@ -16,8 +16,15 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public class EventFinderPage extends AppCompatActivity {
 
@@ -25,6 +32,9 @@ public class EventFinderPage extends AppCompatActivity {
 
     ListView eventList;
     ArrayAdapter<String> adapter;
+    String allEventsUnseparated;
+    ArrayList<ArrayList<String>> dataSeparatedEvents;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +49,19 @@ public class EventFinderPage extends AppCompatActivity {
         configureSettingsButton();
         configureLogo();
 
+        getEvents();
+        splitEventData();
+        configureEventList();
+        configureEventListItemsButton();
+    }
 
 
-
-        //bind eventList to the ListView on the activity_event_finder_page
-        eventList = (ListView) findViewById(R.id.event_list);
-
-        //gets the items to put in the ListView from strings.xml
+    private void configureEventList() {
+        eventList = (ListView) findViewById(R.id.nonpromoted_event_list);
         ArrayList<String> eventArray = new ArrayList<>();
-        eventArray.addAll(Arrays.asList(getResources().getStringArray(R.array.my_events)));
+        for (ArrayList<String> AL: dataSeparatedEvents) {
+            eventArray.add(AL.get(0));
+        }
 
         //create an adapter that will change the ListView based on what we searched
         adapter = new ArrayAdapter<String>(
@@ -59,17 +73,86 @@ public class EventFinderPage extends AppCompatActivity {
         //binds ListView to adapter
         eventList.setAdapter(adapter);
 
-        configureEventListButton();
 
     }
 
 
+    private void splitEventData() {
+        String[] eachEvent = allEventsUnseparated.split("\\|");
+        eachEvent = Arrays.copyOf(eachEvent, eachEvent.length-1);
+        System.out.println(Arrays.toString(eachEvent));
+        ArrayList<ArrayList<String>> eventsWithTheirDataSeparated = new ArrayList<>();
+        for (String x: eachEvent) {
+            String[] dataSeparatedA = x.split(",");
+            ArrayList<String> dataSeparatedAL = new ArrayList<>(Arrays.asList(dataSeparatedA));
+            eventsWithTheirDataSeparated.add(dataSeparatedAL);
+        }
+        dataSeparatedEvents = eventsWithTheirDataSeparated;
 
-    private void configureEventListButton() {
+//        for (ArrayList<String> AL: dataSeparatedEvents) {
+//            for(String x : AL) {
+//                System.out.println(x);
+//            }
+//        }
+    }
+
+
+    private void getEvents() {
+        FileInputStream fis = null;
+        try {
+            fis = openFileInput("NonPromotedEvents.txt");
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while((text = br.readLine()) != null){
+                sb.append(text).append("\n");
+            }
+            System.out.println(sb.toString());
+            allEventsUnseparated = sb.toString();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+    private void configureEventListItemsButton() {
         eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(),EventDescription.class);
+                Iterator<ArrayList<String>> iter = dataSeparatedEvents.iterator();
+                ArrayList<String> found = new ArrayList<>();
+                while(iter.hasNext()){
+                    found = iter.next();
+                    if(found.get(0).equals(adapter.getItem(position))){
+                        break;
+                    }
+                }
+
+                Intent intent = new Intent(getApplicationContext(), EventDescription.class);
+                intent.putExtra("event_name", found.get(0));
+                intent.putExtra("location", found.get(1));
+                intent.putExtra("start_time", found.get(2));
+                intent.putExtra("end_time", found.get(3));
+                intent.putExtra("rsvp", found.get(4));
+                intent.putExtra("description", found.get(5));
+//                intent.putExtra("event_name", dataSeparatedEvents.get(position).get(0));
+//                intent.putExtra("location", dataSeparatedEvents.get(position).get(1));
+//                intent.putExtra("start_time", dataSeparatedEvents.get(position).get(2));
+//                intent.putExtra("end_time", dataSeparatedEvents.get(position).get(3));
+//                intent.putExtra("rsvp", dataSeparatedEvents.get(position).get(4));
+//                intent.putExtra("description", dataSeparatedEvents.get(position).get(5));
                 startActivity(intent);
             }
         });
