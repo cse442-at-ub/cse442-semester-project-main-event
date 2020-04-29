@@ -38,7 +38,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
         String login_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/login.php";
         String account_register_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/account-register.php";
         String save_calendar_event_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/save-event.php";
-        String register_event_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/event-register.php";
+        String register_event_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/event-register-image.php";
         String retrieve_events_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/retrieve-events.php";
         if(type.equals("login")) {
             try {
@@ -155,13 +155,14 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
             }
         } else if (type.equals("event_register")) {
             try {
-                String Event_name = params[1];
-                String Location = params[2];
-                String Start = params[3];
-                String End = params[4];
-                String RSVP = params[5];
-                String Promote = params[6];
-                String Description = params[7];
+                String Url = params[1];
+                String Event_name = params[2];
+                String Location = params[3];
+                String Start = params[4];
+                String End = params[5];
+                String RSVP = params[6];
+                String Promote = params[7];
+                String Description = params[8];
 
                 URL url = new URL(register_event_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -170,7 +171,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("event_name","UTF-8")+"="+URLEncoder.encode(Event_name,"UTF-8")+"&"
+                String post_data = URLEncoder.encode("path","UTF-8")+"="+URLEncoder.encode(Url,"UTF-8")+"&"
+                        + URLEncoder.encode("event_name","UTF-8")+"="+URLEncoder.encode(Event_name,"UTF-8")+"&"
                         + URLEncoder.encode("location","UTF-8")+"="+URLEncoder.encode(Location,"UTF-8")+"&"
                         + URLEncoder.encode("start_time","UTF-8")+"="+URLEncoder.encode(Start,"UTF-8")+"&"
                         + URLEncoder.encode("end_time","UTF-8")+"="+URLEncoder.encode(End,"UTF-8")+"&"
