@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class Event_Registration_Form extends AppCompatActivity {
 
-    EditText Et_Event_Name, Et_Location, Et_Start, Et_End, Et_RSVP, Et_Description;
+    EditText Et_Url, Et_Event_Name, Et_Location, Et_Start, Et_End, Et_RSVP, Et_Description;
     CheckBox Promote;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class Event_Registration_Form extends AppCompatActivity {
         setContentView(R.layout.activity_event__registration__form);
         setTitle("Event Registration Page");
 
+        Et_Url = (EditText)findViewById(R.id.url);
         Et_Event_Name = (EditText)findViewById(R.id.event_Name);
         Et_Location = (EditText)findViewById(R.id.location);
         Et_Start = (EditText)findViewById(R.id.start_time);
@@ -124,6 +125,7 @@ public class Event_Registration_Form extends AppCompatActivity {
     }
 
     public void OnRegisterEvent(View view){
+        String str_Url = Et_Url.getText().toString();
         String str_Event_Name = Et_Event_Name.getText().toString();
         String str_Location = Et_Location.getText().toString();
         String str_Start = Et_Start.getText().toString();
@@ -138,7 +140,7 @@ public class Event_Registration_Form extends AppCompatActivity {
             str_Promote = "0";
 
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, str_Event_Name, str_Location, str_Start, str_End, str_RSVP, str_Promote, str_Description);
+        backgroundWorker.execute(type, str_Url, str_Event_Name, str_Location, str_Start, str_End, str_RSVP, str_Promote, str_Description);
     }
 
 
