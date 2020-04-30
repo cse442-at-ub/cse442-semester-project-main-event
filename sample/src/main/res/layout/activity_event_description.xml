@@ -7,57 +7,133 @@
     tools:context="com.framgia.sample.calendardayview.EventDescription">
 
     <TextView
+        android:id="@+id/textView16"
+        android:layout_width="136dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:text="Event Name"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/event_rsvp_limit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
         android:id="@+id/event_name"
-        android:layout_width="192dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginTop="28dp"
-        android:text="Sleeping"
+
+        android:layout_width="136dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginTop="72dp"
+        android:textColor="#00BBFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/event_location"
-        android:layout_width="186dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="24dp"
-        android:text="My Home"
+        android:layout_width="136dp"
+
+        android:layout_height="26dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#00BBFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_name" />
 
     <TextView
         android:id="@+id/event_time"
-        android:layout_width="187dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginTop="32dp"
-        android:text="12:00AM - 11:59PM"
+        android:layout_width="136dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#00BBFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_location" />
 
     <TextView
         android:id="@+id/event_rsvp_limit"
-        android:layout_width="189dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="36dp"
-        android:text="No RSVP Limit"
+        android:layout_width="136dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#00BBFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_time" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="136dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:text="Time"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/event_time"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
         android:id="@+id/event_description"
         android:layout_width="290dp"
         android:layout_height="214dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="64dp"
-        android:text="This addictive activity will keep you healthy and coming back for more!"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_rsvp_limit" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="Event Desription"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="136dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="72dp"
+        android:gravity="center_horizontal"
+        android:text="Event Name"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="136dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:text="Location"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/event_location"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
