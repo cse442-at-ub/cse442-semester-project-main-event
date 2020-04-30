@@ -1,7 +1,9 @@
 package com.framgia.sample.calendardayview;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +28,35 @@ public class Settings extends AppCompatActivity {
         configureSettingsButton();
         configureLogo();
         configureLogIn();
+        configureLogOut();
+    }
+
+    private void configureLogOut() {
+        final Button Settings = findViewById((R.id.signOut));
+
+        Settings.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder  builder = new AlertDialog.Builder(Settings.this);
+                builder.setMessage("Are you sure you want to log out?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(),LoginPage.class);
+                        startActivity(intent);
+
+                    }
+                }).setNegativeButton("Cancel", null);
+
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+
+
+            }
+        });
     }
 
     private void configureLogIn() {
