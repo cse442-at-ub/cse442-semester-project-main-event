@@ -1,7 +1,10 @@
 package com.framgia.sample.calendardayview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -53,6 +56,35 @@ public class EventFinderPage extends AppCompatActivity {
         splitEventData();
         configureEventList();
         configureEventListItemsButton();
+        configureSwipeRefresh();
+    }
+
+
+    private void configureSwipeRefresh(){
+        SwipeRefreshLayout swipeRL = (SwipeRefreshLayout) findViewById(R.id.swipeEFP);
+        swipeRL.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                retrieveEvents();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                refreshActivity();
+            }
+        });
+    }
+
+    private void refreshActivity(){
+        this.recreate();
+    }
+
+
+    private void retrieveEvents(){
+        String type = "retrieve_events";
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type);
     }
 
 
@@ -234,7 +266,6 @@ public class EventFinderPage extends AppCompatActivity {
         calendarButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: complete this function after the calendar page is created.
                 Intent intent = new Intent(getApplicationContext(),Calender.class);
                 startActivity(intent);
             }
