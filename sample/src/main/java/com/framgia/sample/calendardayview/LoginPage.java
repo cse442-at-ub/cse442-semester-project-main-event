@@ -37,29 +37,14 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        configureSeeAllEventButton();
+
         configureRegisterButton();
         getEventsFromDB();
-
-
-
 
         UsernameEt = (EditText) findViewById(R.id.UserName);
         PasswordEt = (EditText) findViewById(R.id.Password);
     }
 
-    private void configureSeeAllEventButton() {
-        TextView goToMain = (TextView) findViewById(R.id.GoToMain);
-        goToMain.setOnClickListener(new TextView.OnClickListener() {
-
-                                        public void onClick(View v) {
-                                            Intent intent = new Intent(getApplication(), MainActivity.class);
-                                            startActivity(intent);
-                                        }
-
-                                    }
-        );
-    }
 
     private void configureRegisterButton() {
         TextView goToRegister = (TextView) findViewById(R.id.LogIn);
