@@ -291,6 +291,11 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
 
         }
 
+        if (type.equals("event_register")) {
+            alertDialog.setMessage(result);
+            alertDialog.show();
+        }
+
         if(type.equals("retrieve_events")) {
             String result2 = values[2];
             String fileName = "NonPromotedEvents.txt";
@@ -338,14 +343,6 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
                 }
             }
 
-
-
-
-//            alertDialog.setMessage(result);
-//            alertDialog.show();
-//            Intent intent = new Intent(context, EventFinderPage.class);
-//            intent.putExtra("events", result);
-//            context.startActivity(intent);
         }
 
 

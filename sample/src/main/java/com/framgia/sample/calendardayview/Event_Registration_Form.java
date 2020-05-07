@@ -1,5 +1,6 @@
 package com.framgia.sample.calendardayview;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -117,7 +118,6 @@ public class Event_Registration_Form extends AppCompatActivity {
         calendarButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: complete this function after the calendar page is created.
                 Intent intent = new Intent(getApplicationContext(),Calender.class);
                 startActivity(intent);
             }
@@ -132,15 +132,50 @@ public class Event_Registration_Form extends AppCompatActivity {
         String str_End = Et_End.getText().toString();
         String str_RSVP = Et_RSVP.getText().toString();
         String str_Description = Et_Description.getText().toString();
-        String type = "event_register";
-        String str_Promote;
-        if (Promote.isChecked())
-            str_Promote = "1";
-        else
-            str_Promote = "0";
 
-        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, str_Url, str_Event_Name, str_Location, str_Start, str_End, str_RSVP, str_Promote, str_Description);
+        boolean cont = true;
+        if(str_Url.isEmpty() || str_Event_Name.isEmpty() || str_Location.isEmpty() || str_Start.isEmpty() || str_End.isEmpty() || str_RSVP.isEmpty() || str_Description.isEmpty()) {
+            AlertDialog alert = new AlertDialog.Builder(this).create();
+            alert.setTitle("Invalid Input");
+            alert.setMessage("You can't leave fields empty");
+            alert.show();
+            cont = false;
+        } else {
+            int whichError = 0;
+            try {
+                int check = Integer.parseInt(str_Start);
+                whichError++;
+                check = Integer.parseInt(str_End);
+                whichError++;
+                check = Integer.parseInt(str_RSVP);
+            } catch (NumberFormatException e) {
+                cont = false;
+                AlertDialog alert = new AlertDialog.Builder(this).create();
+                alert.setTitle("Invalid Input");
+                if (whichError == 0) {
+                    alert.setMessage("Enter a number for the Start Time");
+                    alert.show();
+                } else if (whichError == 1) {
+                    alert.setMessage("Enter a number for the End Time");
+                    alert.show();
+                } else {
+                    alert.setMessage("Enter a number for RSVP");
+                    alert.show();
+                }
+            }
+        }
+
+        if (cont) {
+            String type = "event_register";
+            String str_Promote;
+            if (Promote.isChecked())
+                str_Promote = "1";
+            else
+                str_Promote = "0";
+
+            BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+            backgroundWorker.execute(type, str_Url, str_Event_Name, str_Location, str_Start, str_End, str_RSVP, str_Promote, str_Description);
+        }
     }
 
 
