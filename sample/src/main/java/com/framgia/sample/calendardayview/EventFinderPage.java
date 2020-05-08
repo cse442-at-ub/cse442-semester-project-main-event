@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -92,7 +93,7 @@ public class EventFinderPage extends AppCompatActivity {
         eventList = (ListView) findViewById(R.id.nonpromoted_event_list);
         ArrayList<String> eventArray = new ArrayList<>();
         for (ArrayList<String> AL: dataSeparatedEvents) {
-            eventArray.add(AL.get(0));
+            eventArray.add(AL.get(1));
         }
 
         //create an adapter that will change the ListView based on what we searched
@@ -120,6 +121,7 @@ public class EventFinderPage extends AppCompatActivity {
             eventsWithTheirDataSeparated.add(dataSeparatedAL);
         }
         dataSeparatedEvents = eventsWithTheirDataSeparated;
+        Log.println('2', "SSSSSSSSSSSSSSSSS", dataSeparatedEvents.toString());
 
 //        for (ArrayList<String> AL: dataSeparatedEvents) {
 //            for(String x : AL) {
@@ -167,18 +169,21 @@ public class EventFinderPage extends AppCompatActivity {
                 ArrayList<String> found = new ArrayList<>();
                 while(iter.hasNext()){
                     found = iter.next();
-                    if(found.get(0).equals(adapter.getItem(position))){
+                    if(found.get(1).equals(adapter.getItem(position))){
                         break;
                     }
                 }
 
                 Intent intent = new Intent(getApplicationContext(), EventDescription.class);
-                intent.putExtra("event_name", found.get(0));
-                intent.putExtra("location", found.get(1));
-                intent.putExtra("start_time", found.get(2));
-                intent.putExtra("end_time", found.get(3));
-                intent.putExtra("rsvp", found.get(4));
-                intent.putExtra("description", found.get(5));
+                if(found.get(0) != "") {
+                    intent.putExtra("path", found.get(0));
+                }
+                intent.putExtra("event_name", found.get(1));
+                intent.putExtra("location", found.get(2));
+                intent.putExtra("start_time", found.get(3));
+                intent.putExtra("end_time", found.get(4));
+                intent.putExtra("rsvp", found.get(5));
+                intent.putExtra("description", found.get(6));
 //                intent.putExtra("event_name", dataSeparatedEvents.get(position).get(0));
 //                intent.putExtra("location", dataSeparatedEvents.get(position).get(1));
 //                intent.putExtra("start_time", dataSeparatedEvents.get(position).get(2));
