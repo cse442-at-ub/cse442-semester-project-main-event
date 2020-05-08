@@ -40,6 +40,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
         String save_calendar_event_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/save-event.php";
         String register_event_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/event-register-image.php";
         String retrieve_events_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/retrieve-events.php";
+        String retrieve_user_events_url = "https://www-student.cse.buffalo.edu/CSE442-542/2020-spring/cse-442u/retrieve-user-events.php";
+
         if(type.equals("login")) {
             try {
                 String user_name = params[1];
@@ -260,6 +262,41 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else if (type.equals("retrieve_user_events")) {
+            try {
+                String user_name = params[1];
+
+                URL url = new URL(retrieve_user_events_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("user_name", "UTF-8") + "=" + URLEncoder.encode(user_name, "UTF-8") + "&";
+
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                String result = "";
+                String line = "";
+                while ((line = bufferedReader.readLine()) != null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+
+
+                return new String[]{result, type};
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }
@@ -327,6 +364,35 @@ public class BackgroundWorker extends AsyncTask<String,Void,String[]> {
                 fos = context.openFileOutput(fileName, MODE_PRIVATE);
                 bw = new BufferedWriter(new OutputStreamWriter(fos));
                 bw.write(result2);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if(fos != null){
+                    try {
+                        bw.close();
+                        fos.close();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+        }
+
+
+
+        if(type.equals("retrieve_user_events")) {
+            String fileName = "Events.txt";
+
+            FileOutputStream fos = null;
+            BufferedWriter bw = null;
+            try {
+                fos = context.openFileOutput(fileName, MODE_PRIVATE);
+                bw = new BufferedWriter(new OutputStreamWriter(fos));
+                bw.write(result);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {

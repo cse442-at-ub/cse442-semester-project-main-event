@@ -22,13 +22,21 @@ import com.framgia.library.calendardayview.decoration.CdvDecorationDefault;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Iterator;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -64,6 +72,11 @@ public class Calender extends AppCompatActivity {
     //Animations
     Animation show_fab;
     Animation hide_fab;
+
+
+
+    String allEventsUnseparated;
+    ArrayList<ArrayList<String>> dataSeparatedEvents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,63 +177,98 @@ public class Calender extends AppCompatActivity {
                 });*/
 
 
+        //retrieve_User_Events();
+        //getEvents();
+        //splitEventData();
+        //EventItems();
 
 
 
-        /*String className = getIntent().getStringExtra("className");
-        int startHour = getIntent().getIntExtra("startHour", 0);
-        int startMin = getIntent().getIntExtra("startMin", 0);
-        int endHour = getIntent().getIntExtra("endHour", 0);
-        int endMin = getIntent().getIntExtra("endMin", 0);
-        String location = getIntent().getStringExtra("Location");
-
-        myclasses.add(setClasses(className, startHour, startMin, endHour, endMin, location));
-
-
-        //Log.v("classes: ", String.valueOf(myclasses.size()));*/
 
 
 
-        /*{
-
-            Calendar timeStart = Calendar.getInstance();
-            timeStart.set(Calendar.HOUR_OF_DAY, 12);
-            timeStart.set(Calendar.MINUTE, 0);
-            Calendar timeEnd = (Calendar) timeStart.clone();
-            timeEnd.set(Calendar.HOUR_OF_DAY, 13);
-            timeEnd.set(Calendar.MINUTE, 30);
-
-            Popup popup = new Popup();
-            popup.setStartTime(timeStart);
-            popup.setEndTime(timeEnd);
-            popup.setTitle("Hack Night");
-            popup.setDescription("Hacking with peoples");
-            myevents.add(popup);
-        }
-
-        {
-
-            Calendar timeStart = Calendar.getInstance();
-            timeStart.set(Calendar.HOUR_OF_DAY, 14);
-            timeStart.set(Calendar.MINUTE, 0);
-            Calendar timeEnd = (Calendar) timeStart.clone();
-            timeEnd.set(Calendar.HOUR_OF_DAY, 15);
-            timeEnd.set(Calendar.MINUTE, 00);
-
-            Popup popup = new Popup();
-            popup.setStartTime(timeStart);
-            popup.setEndTime(timeEnd);
-            popup.setTitle("Math club");
-            popup.setDescription("Solve math");
-            myevents.add(popup);
-        }
-
-
-        dayView.setPopups(myevents);*/
         dayView.setEvents(myclasses);
 
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
     }
+
+    private void retrieve_User_Events(){
+        String type = "retrieve_user_events";
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type, user_name);
+    }
+
+    private void splitEventData() {
+        if (allEventsUnseparated != null) {
+            String[] eachEvent = allEventsUnseparated.split("\\|");
+            eachEvent = Arrays.copyOf(eachEvent, eachEvent.length - 1);
+            System.out.println(Arrays.toString(eachEvent));
+            ArrayList<ArrayList<String>> eventsWithTheirDataSeparated = new ArrayList<>();
+            for (String x : eachEvent) {
+                String[] dataSeparatedA = x.split(",");
+                ArrayList<String> dataSeparatedAL = new ArrayList<>(Arrays.asList(dataSeparatedA));
+                eventsWithTheirDataSeparated.add(dataSeparatedAL);
+            }
+            dataSeparatedEvents = eventsWithTheirDataSeparated;
+
+        }
+//        for (ArrayList<String> AL: dataSeparatedEvents) {
+//            for(String x : AL) {
+//                System.out.println(x);
+//            }
+//        }
+    }
+
+    private void getEvents() {
+
+        FileInputStream fis = null;
+        try {
+            fis = openFileInput("Events.txt");
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while((text = br.readLine()) != null){
+                sb.append(text).append("\n");
+            }
+            System.out.println(sb.toString());
+            allEventsUnseparated = sb.toString();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+    private void EventItems() {
+        int classColor = ContextCompat.getColor(this, R.color.eventColor1);
+        Iterator<ArrayList<String>> iter = dataSeparatedEvents.iterator();
+        ArrayList<String> found = new ArrayList<>();
+        while(iter.hasNext()){
+            found = iter.next();
+            int startHour = Integer.parseInt(found.get(1));
+            int startMin = Integer.parseInt(found.get(2));
+            int endHour = Integer.parseInt(found.get(3));
+            int endMin = Integer.parseInt(found.get(4));
+
+            setClasses(getApplicationContext(), found.get(0), startHour, startMin, endHour, endMin, found.get(5), classColor);
+        }
+
+
+    }
+
+
 
 
     /**
