@@ -8,25 +8,128 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="81dp"
-        android:layout_height="682dp"
-        android:background="#03DDEC"
+        android:layout_width="55dp"
+        android:layout_height="730dp"
+        android:background="#00BBFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
+    <ImageButton
+        android:id="@+id/profileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.159"
+        app:srcCompat="@drawable/profile_icon" />
 
-    <Button
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.76"
+        app:srcCompat="@drawable/settings_icon" />
+
+    <ImageButton
+        android:id="@+id/register_event_button"
+        android:layout_width="49dp"
+        android:layout_height="61dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.45"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/reg_icon" />
+
+    <ImageButton
         android:id="@+id/PromotedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="@string/PromotedButton"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.35000002"
+        app:srcCompat="@drawable/promoted_icon" />
+
+    <ImageButton
+        android:id="@+id/CalendarButton"
+        android:layout_width="45dp"
+        android:layout_height="54dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.55"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/cal_icon" />
+
+    <ImageButton
+        android:id="@+id/EventFinderButton"
+        android:layout_width="45dp"
+        android:layout_height="54dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.256"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/event_icon" />
+
+    <ImageButton
+        android:id="@+id/logo"
+        android:layout_width="51dp"
+        android:layout_height="43dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012"
+        app:srcCompat="@drawable/logo_samll" />
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipePP"
+        android:layout_width="355dp"
+        android:layout_height="731dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ListView
+            android:id="@+id/promoted_event_list"
+            android:layout_width="357dp"
+            android:layout_height="737dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/PromotedButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

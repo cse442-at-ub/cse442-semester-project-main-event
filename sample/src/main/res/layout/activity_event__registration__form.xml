@@ -4,17 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/end_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="End Time"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/start_time" />
+
     <View
-        android:id="@+id/sidebar"
-        android:layout_width="81dp"
-        android:layout_height="match_parent"
+        android:id="@+id/view"
+        android:layout_width="55dp"
+        android:layout_height="730dp"
         android:background="#00BBFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/title"
@@ -27,95 +39,38 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sidebar"
+        app:layout_constraintStart_toEndOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/Upload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:background="#00BBFF"
-        android:text="Upload Image"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <EditText
         android:id="@+id/rsvp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:ems="10"
+        android:hint="RSVP Limit"
         android:inputType="textPersonName"
-        android:text="RSVP Limit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sidebar"
-        app:layout_constraintTop_toBottomOf="@+id/Time" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/end_time" />
 
     <EditText
-        android:id="@+id/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/desription"
+        android:layout_width="235dp"
+        android:layout_height="168dp"
+        android:background="@null"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sidebar"
-        app:layout_constraintTop_toBottomOf="@+id/event_Name" />
+        android:gravity="start|top"
+        android:hint="Description"
+        android:inputType="textMultiLine"
 
-    <EditText
-        android:id="@+id/description"
-        android:layout_width="208dp"
-        android:layout_height="115dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Description"
+        app:layout_constraintBottom_toTopOf="@+id/register_Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toEndOf="@+id/sidebar"
-        app:layout_constraintTop_toBottomOf="@+id/promote_Check" />
-
-    <Button
-        android:id="@+id/register_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:background="#00BBFF"
-        android:text="Register"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toEndOf="@+id/sidebar"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
-
-    <EditText
-        android:id="@+id/Time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sidebar"
-        app:layout_constraintTop_toBottomOf="@+id/location" />
-
-    <EditText
-        android:id="@+id/event_Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Event Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sidebar"
-        app:layout_constraintTop_toBottomOf="@+id/Upload" />
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/promote_Check"
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/promote_Check"
@@ -123,9 +78,162 @@
         android:layout_height="wrap_content"
         android:text="Promote My Event!"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.331"
-        app:layout_constraintStart_toEndOf="@+id/sidebar"
+        app:layout_constraintHorizontal_bias="0.308"
+        app:layout_constraintStart_toEndOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/rsvp" />
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Location"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/event_Name" />
+
+    <Button
+        android:id="@+id/register_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="#00BBFF"
+        android:text="Register"
+        android:textColor="#FFFFFF"
+        android:onClick="OnRegisterEvent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintStart_toEndOf="@+id/view" />
+
+    <EditText
+        android:id="@+id/start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Start Time"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+
+    <EditText
+        android:id="@+id/event_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Event Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/url" />
+
+    <EditText
+        android:id="@+id/url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Url to image"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <ImageButton
+        android:id="@+id/profileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.159"
+        app:srcCompat="@drawable/profile_icon" />
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.76"
+        app:srcCompat="@drawable/settings_icon" />
+
+    <ImageButton
+        android:id="@+id/register_event_button"
+        android:layout_width="49dp"
+        android:layout_height="61dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.45"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/reg_icon" />
+
+    <ImageButton
+        android:id="@+id/PromotedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.35000002"
+        app:srcCompat="@drawable/promoted_icon" />
+
+    <ImageButton
+        android:id="@+id/CalendarButton"
+        android:layout_width="45dp"
+        android:layout_height="54dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.55"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/cal_icon" />
+
+    <ImageButton
+        android:id="@+id/EventFinderButton"
+        android:layout_width="45dp"
+        android:layout_height="54dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.256"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/event_icon" />
+
+    <ImageButton
+        android:id="@+id/logo"
+        android:layout_width="51dp"
+        android:layout_height="43dp"
+        android:background="#00BBFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012"
+        app:srcCompat="@drawable/logo_samll" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
